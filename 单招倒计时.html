@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            overflow: hidden;
+            margin-top: 230px;
+            margin-left: 230px;
+        }
+        .box span{
+            background-color: #fff;
+            width: 50px;
+            font-size: 50px;
+            line-height: 100px;
+        }
+        div div,div span{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin-left: 20px;
+            float: left;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="dd">0</div><span>天</span>
+        <div id="hh">0</div><span>时</span>
+        <div id="mm">0</div><span>分</span>
+        <div id="ss">0</div><span>秒</span>
+    </div>
+</body>
+<script>
+    function abc(){
+        var newTime=new Date().getTime();
+        // console.log(newTime);
+        var mTime=new Date(2025,3 ,2).getTime();
+        var hm=(mTime-newTime)/1000;
+        var d=parseInt(hm/60/60/24);
+        var h=parseInt(hm/60/60%24);
+        var m=parseInt(hm/60%60);
+        var s=parseInt(hm%60);
+        dd.innerText=d;
+        hh.innerText=h;
+        mm.innerText=m;
+        ss.innerText=s;
+    };
+    
+
+    setInterval(function(){
+        abc();
+
+    },1000);
+</script>
+</html>
